@@ -10,6 +10,11 @@ def get_openai_api_key():
     openai_api_key = os.getenv("OPENAI_API_KEY")
     return openai_api_key
 
+def get_ai_credit_key():
+    load_env()
+    ai_credit_key = os.getenv("AI_CREDIT_KEY")
+    return ai_credit_key
+
 def get_exa_api_key():
     load_env()
     exa_api_key = os.getenv("EXA_API_KEY")
