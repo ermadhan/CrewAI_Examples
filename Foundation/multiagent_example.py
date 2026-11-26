@@ -12,6 +12,7 @@ from utils import get_openai_api_key, get_exa_api_key
 # import the tools
 from crewai_tools import EXASearchTool, ScrapeWebsiteTool
 
+os.environ["OPENAI_MODEL_NAME"] = "gpt-4o-mini"
 
 # Create the EXASearchTool instance
 exa_search_tool = EXASearchTool(base_url=get_exa_api_key())
