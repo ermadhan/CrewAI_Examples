@@ -22,8 +22,10 @@ os.environ["EXA_API_KEY"] = get_exa_api_key()
 exa_search_tool = EXASearchTool(base_url=os.getenv("EXA_BASE_URL")) 
 scrape_website_tool = ScrapeWebsiteTool()
 
+CONFIG_DIR = Path(__file__).resolve().parent / "config"
+
 # load the configuration file for the agents
-with open('config/agents.yaml', 'r') as file:
+with open(CONFIG_DIR / 'agents.yaml', 'r') as file:
         agent_config = yaml.safe_load(file)
 
 print(agent_config)
@@ -123,7 +125,7 @@ result_fail = write_report_guardrail(test_report_fail)
 print(result_fail)
 
 # load the configuration file for the tasks
-with open('config/tasks.yaml', 'r') as file:
+with open(CONFIG_DIR / 'tasks.yaml', 'r') as file:
     task_config = yaml.safe_load(file)
 
 ### START CODE HERE ###
