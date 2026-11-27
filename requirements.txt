@@ -3,3 +3,6 @@ crewai-tools
 python-dotenv
 exa_py
 dill
+pandas
+matplotlib
+seaborn
