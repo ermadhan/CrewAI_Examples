@@ -1,6 +1,7 @@
 import os
 import json
 from dotenv import load_dotenv, find_dotenv
+import re
 
 # these expect to find a .env file at the directory above the lesson.                                                                                                                     # the format for that file is (without the comment)                                                                                                                                       #API_KEYNAME=AStringThatIsTheLongAPIKeyFromSomeService
 def load_env():
@@ -43,3 +44,10 @@ def get_dict_keys(task_output):
         except json.JSONDecodeError:
             print(f"  ❌ Cannot parse as JSON")
     print()
+
+
+def clean_markdown(text):
+    """Remove code fence markers if present"""
+    text = re.sub(r'^```(?:markdown|md)?\s*\n', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'\n```\s*$', '', text)
+    return text.strip()

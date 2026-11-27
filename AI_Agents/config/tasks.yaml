@@ -30,3 +30,16 @@ write_final_report:
     findings that answer the user query, 3) Supporting evidence and analysis, 4) Complete
     source citations, 5) Key insights and recommendations'
 
+analyze_code_quality:
+  description: 'Analyze the code changes in {file_content} to ensure it meets quality standards and best practices.'
+  expected_output: 'A detailed report highlighting code quality issues in the provided code changes and suggestions for improvement. Report should be JSON formatted with keys: critical_issues, minor_issues, reasoning.'
+
+review_security:
+  description: 'Use the SerperDevTool to find the most relevant security best practices from OWASP and pass the URLs to the ScrapeWebsiteTool to get detailed information for the code change {file_content}.'
+  expected_output: 'A detailed report highlighting security issues and best practices found, with reasoning. Report should be JSON formatted with keys: security_vulnerabilities, blocking, highest_risk, security_recommendations.'
+
+make_review_decision:
+  description: 'Make a decision based on the results of the code quality analysis and security review tasks for the code changes in {file_content}.'
+  expected_output: 'A final review decision indicating whether the code changes should be approved, rejected, or require further modifications.'
+
+
